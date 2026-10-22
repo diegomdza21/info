@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sustentabilidad en Ingeniería</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#17332d; --green:#1c6550; --paper:#f6f4e9; --lime:#dceba0; --muted:#52635a; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"DM Sans",sans-serif; color:var(--ink); }
+    .display { font-family:"Fraunces",serif; }
+    .texture { background-image:radial-gradient(#244a3419 .8px,transparent .8px); background-size:18px 18px; }
+    .chapter-btn[aria-selected="true"] { background-color:#dceba0 !important; color:#17332d !important; border-color:#dceba0 !important; }
+    .chapter-btn[aria-selected="false"] { background-color:transparent !important; color:#fff !important; border-color:rgba(255,255,255,.2) !important; }
+    .principle-btn[aria-pressed="true"] { background-color:#1c6550 !important; color:#fff !important; border-color:#1c6550 !important; transform:translateY(-3px); }
+    .principle-btn[aria-pressed="false"] { background-color:#fff !important; color:#17332d !important; border-color:#cbd5c5 !important; transform:none; }
+    .dimension-btn[aria-selected="true"] { background:#1c6550; color:white; }
+    .swap-in { animation:appear .38s ease both; }
+    @keyframes appear { from {opacity:0;transform:translateY(10px)} to {opacity:1;transform:translateY(0)} }
+    :focus-visible { outline:3px solid #b97927; outline-offset:4px; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+</head>
+<body class="w-full min-h-screen" style="background: rgb(246, 244, 233);">
+  <header class="w-full overflow-hidden relative" style="background: rgb(23, 63, 52);">
+    <div class="absolute right-[-100px] top-[-180px] w-[400px] h-[400px] rounded-full border border-white/20 pointer-events-none"></div>
+    <div class="absolute right-[-180px] top-[-270px] w-[650px] h-[650px] rounded-full border border-white/10 pointer-events-none"></div>
+    <div class="relative max-w-6xl mx-auto px-5 md:px-10 pt-8 pb-12 md:pb-16">
+      <p class="uppercase tracking-[.2em] font-bold mb-10" style="color: rgb(220, 235, 160); font-size: 17px;">INGENIERÍA sustentable</p>
+      <p class="uppercase tracking-[.18em] font-bold mb-4" style="color: rgb(220, 235, 160); font-size: 16px;">Diego Mendoza - A01245043</p>
+      <h1 class="display max-w-3xl leading-[1.08]" style="color: rgb(255, 255, 255); font-weight: 600; font-size: 53px;">Sustentabilidad en ingeniería</h1>
+      <p class="max-w-2xl mt-5 leading-relaxed" style="color: rgb(227, 237, 227); font-size: 21px;">Infografía interactiva sobre la sustentabilidad, ingeniería sustentable y cómo se aplicó al reto de la clase</p>
+    </div>
+  </header>
+
+  <main class="w-full">
+    <div class="max-w-6xl mx-auto px-5 md:px-10">
+      <nav aria-label="Explorar capítulos" class="relative -mt-5 z-10 grid grid-cols-1 sm:grid-cols-3 gap-2 p-2 rounded-2xl bg-[#17332d] shadow-xl">
+        <button type="button" id="chapter-tab-1" class="chapter-btn text-left rounded-xl px-5 py-4 border border-white/20 text-white transition" role="tab" aria-selected="true" aria-controls="chapter-1" style="font-weight: 700; font-size: 16px;">01  Principios e indicadores</button>
+        <button type="button" id="chapter-tab-2" class="chapter-btn text-left rounded-xl px-5 py-4 border border-white/20 text-white transition" role="tab" aria-selected="false" aria-controls="chapter-2" style="font-weight: 700; font-size: 16px;">02  Ingeniería sustentable</button>
+        <button type="button" id="chapter-tab-3" class="chapter-btn text-left rounded-xl px-5 py-4 border border-white/20 text-white transition" role="tab" aria-selected="false" aria-controls="chapter-3" style="font-weight: 700; font-size: 16px;">03  Reto sustentable</button>
+      </nav>
+    </div>
+
+    <!-- CAPÍTULO 1 -->
+    <section id="chapter-1" role="tabpanel" aria-labelledby="chapter-tab-1" class="max-w-6xl mx-auto px-5 md:px-10 py-12 md:py-16 swap-in">
+      <div>
+        <h2 class="display leading-tight mb-4" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Principios e Indicadores de Sustentabilidad</h2>
+        <p class="leading-relaxed max-w-2xl" style="color: rgb(82, 99, 90); font-size: 23px;">La sustentabilidad considera el impacto de un proyecto a lo largo del tiempo. Explora sus principios, compara sus dimensiones y descubre qué indicadores permiten observar sus resultados.</p>
+      </div>
+
+      <div class="mt-14">
+        <h3 class="display mb-3" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 30px;">Tres Principios para la Sustentabilidad</h3>
+        <p class="mb-6" style="color: rgb(82, 99, 90); font-size: 19px;">(Selecciona una idea para leer qué significa en la práctica)</p>
+        <div class="grid md:grid-cols-3 gap-3" aria-label="Selecciona un principio">
+          <button type="button" data-principle="0" aria-pressed="true" class="principle-btn min-h-28 p-5 rounded-2xl border border-[#cbd5c5] text-left font-bold transition" style="font-weight: 700; font-size: 24px;">Perspectiva del ciclo de vida y regeneración</button>
+          <button type="button" data-principle="1" aria-pressed="false" class="principle-btn min-h-28 p-5 rounded-2xl border border-[#cbd5c5] bg-white text-left font-bold transition" style="font-weight: 700; font-size: 24px;">Uso eficiente de recursos e innovación</button>
+          <button type="button" data-principle="2" aria-pressed="false" class="principle-btn min-h-28 p-5 rounded-2xl border border-[#cbd5c5] bg-white text-left font-bold transition" style="font-weight: 700; font-size: 24px;">Ética y responsabilidad intergeneracional</button>
+        </div>
+        <div class="mt-4 rounded-3xl p-7 md:p-9" style="background: rgb(233, 240, 215);">
+          <div class="principle-detail swap-in" data-detail="0">
+            <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 27px;">Evaluar los impactos ambientales y socioeconómicos desde la extracción de materia prima hasta la disposición final, asegurando que las funciones de la naturaleza permanezcan intactas.</p>
+          </div>
+          <div class="principle-detail hidden swap-in" data-detail="1">
+            <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 27px;">Emplear energías limpias o renovables y optimizar las materias primas para minimizar los residuos y las emisiones tóxicas.</p>
+          </div>
+          <div class="principle-detail hidden swap-in" data-detail="2">
+            <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 27px;">Tomar decisiones de diseño que satisfagan las necesidades del presente sin poner en riesgo las necesidades de las generaciones futuras.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h3 class="display mb-3" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 30px;">Dimensiones e Indicadores de Sustentabilidad</h3>
+        <p class="max-w-3xl leading-relaxed mb-7" style="color: rgb(82, 99, 90); font-size: 20px;">El desarrollo sostenible se fundamenta en el modelo del Triple Resultado (Triple Bottom Line), ampliado en contextos globales hacia la agenda de los ODS de la ONU</p>
+        <div role="tablist" aria-label="Dimensiones e indicadores" class="flex flex-wrap gap-2 mb-4">
+          <button id="dimension-tab-1" type="button" role="tab" aria-selected="true" aria-controls="dimension-1" tabindex="0" class="dimension-btn px-6 py-3 rounded-full bg-[#e8ecdc] font-bold transition" style="font-weight: 700; font-size: 20px;">Ambiental</button>
+          <button id="dimension-tab-2" type="button" role="tab" aria-selected="false" aria-controls="dimension-2" tabindex="-1" class="dimension-btn px-6 py-3 rounded-full bg-[#e8ecdc] font-bold transition" style="font-weight: 700; font-size: 20px;">Económica</button>
+          <button id="dimension-tab-3" type="button" role="tab" aria-selected="false" aria-controls="dimension-3" tabindex="-1" class="dimension-btn px-6 py-3 rounded-full bg-[#e8ecdc] font-bold transition" style="font-weight: 700; font-size: 20px;">Social</button>
+        </div>
+        <div class="rounded-3xl p-6 md:p-9 texture" style="background: rgb(233, 240, 215);">
+          <div id="dimension-1" role="tabpanel" aria-labelledby="dimension-tab-1" tabindex="0" class="dimension-panel swap-in grid lg:grid-cols-[1fr_1fr] gap-8">
+            <div>
+              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 17px;">Dimensión ambiental</p>
+              <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 20px;">Conservar la biodiversidad, mantener la integridad de los ecosistemas y utilizar de forma razonable los recursos renovables y no renovables. Busca mantener la tasa de regeneración natural por encima de la tasa de consumo.</p>
+            </div>
+            <div class="lg:border-l border-[#cbd5c5] lg:pl-8">
+              <h4 class="font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 20px;">Indicadores para observar</h4>
+              <ul class="list-disc pl-5 space-y-2" style="color: rgb(52, 75, 62); font-size: 20px;">
+                <li>Huella de carbono (kg de CO₂ emitidos)</li>
+                <li>Huella hídrica</li>
+                <li>Tasa de generación y reciclaje de residuos</li>
+                <li>Consumo energético por unidad producida</li>
+              </ul>
+            </div>
+          </div>
+          <div id="dimension-2" role="tabpanel" aria-labelledby="dimension-tab-2" tabindex="0" class="dimension-panel hidden swap-in grid lg:grid-cols-[1fr_1fr] gap-8">
+            <div>
+              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 17px;">Dimensión económica</p>
+              <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 20px;">Garantizar la viabilidad financiera y rentabilidad del proyecto o sistema técnico, incentivando la innovación, el uso eficiente de insumos y la creación de valor a largo plazo sin transferir costos ecológicos a la sociedad.</p>
+            </div>
+            <div class="lg:border-l border-[#cbd5c5] lg:pl-8">
+              <h4 class="font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 20px;">Indicadores para observar</h4>
+              <ul class="list-disc pl-5 space-y-2" style="color: rgb(52, 75, 62); font-size: 20px;">
+                <li>Retorno de inversión considerando costos ambientales</li>
+                <li>Costo por tonelada de CO₂ evitado</li>
+                <li>Análisis de costo del ciclo de vida (LCC)</li>
+              </ul>
+            </div>
+          </div>
+          <div id="dimension-3" role="tabpanel" aria-labelledby="dimension-tab-3" tabindex="0" class="dimension-panel hidden swap-in grid lg:grid-cols-[1fr_1fr] gap-8">
+            <div>
+              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 17px;">Dimensión social</p>
+              <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 20px;">Promover la equidad social, el bienestar, la inclusión y la mejora de la calidad de vida en las comunidades afectadas. Garantizar el respeto a los derechos humanos y la justicia intergeneracional.</p>
+            </div>
+            <div class="lg:border-l border-[#cbd5c5] lg:pl-8">
+              <h4 class="font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 20px;">Indicadores para observar</h4>
+              <ul class="list-disc pl-5 space-y-2" style="color: rgb(52, 75, 62); font-size: 20px;">
+                <li>Tasa de seguridad y salud ocupacional</li>
+                <li>Nivel de aceptación</li>
+                <li>Impacto comunitario</li>
+                <li>Generación de empleo local</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-14 rounded-3xl border-2 border-dashed border-[#a8bea4] min-h-44 flex flex-col items-center justify-center text-center p-7" style="background: rgb(232, 236, 220);">
+        <span aria-hidden="true" class="text-4xl mb-2">◌</span>
+        <p class="font-bold" style="color: rgb(23, 51, 45); font-size: 16px;">ESPACIO PARA TU IMAGEN 02</p>
+        <p class="mt-2" style="color: rgb(82, 99, 90); font-size: 14px;">Aquí puedes colocar un diagrama propio de las tres dimensiones o una imagen de tu proyecto.</p>
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 2 -->
+    <section id="chapter-2" role="tabpanel" aria-labelledby="chapter-tab-2" class="hidden max-w-6xl mx-auto px-5 md:px-10 py-16 md:py-24 swap-in">
+      <p class="uppercase tracking-widest font-bold mb-4" style="color: rgb(28, 101, 80); font-size: 13px;">Capítulo 02</p>
+      <h2 class="display mb-6" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 24px;">Ingeniería sustentable</h2>
+      <div class="rounded-3xl p-8 md:p-12 border border-[#d8dfcc]" style="background: rgb(232, 236, 220);">
+        <p class="leading-relaxed" style="color: rgb(82, 99, 90); font-size: 16px;">Esta sección está reservada para agregar tu contenido más adelante.</p>
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 3 -->
+    <section id="chapter-3" role="tabpanel" aria-labelledby="chapter-tab-3" class="hidden max-w-6xl mx-auto px-5 md:px-10 py-16 md:py-24 swap-in">
+      <p class="uppercase tracking-widest font-bold mb-4" style="color: rgb(28, 101, 80); font-size: 13px;">Capítulo 03</p>
+      <h2 class="display mb-6" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 24px;">Reto sustentable</h2>
+      <div class="rounded-3xl p-8 md:p-12 border border-[#d8dfcc]" style="background: rgb(232, 236, 220);">
+        <p class="leading-relaxed" style="color: rgb(82, 99, 90); font-size: 16px;">Esta sección está reservada para agregar tu reto más adelante.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full mt-8 py-7" style="background: rgb(232, 236, 220);">
+    <p class="max-w-6xl mx-auto px-5 md:px-10" style="color: rgb(82, 99, 90); font-size: 13px;">Ingeniería × futuro · Explora cada capítulo a tu ritmo</p>
+  </footer>
+
+  <script>
+    const chapterButtons = [...document.querySelectorAll('.chapter-btn')];
+    function selectChapter(index) {
+      chapterButtons.forEach((button, position) => {
+        const active = position === index;
+        button.setAttribute('aria-selected', String(active));
+        document.getElementById(button.getAttribute('aria-controls')).classList.toggle('hidden', !active);
+      });
+    }
+    chapterButtons.forEach((button, index) => {
+      button.addEventListener('click', () => selectChapter(index));
+    });
+
+    const principleButtons = [...document.querySelectorAll('.principle-btn')];
+    const principleDetails = [...document.querySelectorAll('.principle-detail')];
+    function renderPrincipleSelection(index) {
+      principleButtons.forEach((button, position) => {
+        button.setAttribute('aria-pressed', String(position === index));
+      });
+      principleDetails.forEach((detail, position) => {
+        detail.classList.toggle('hidden', position !== index);
+      });
+    }
+    principleButtons.forEach((button, index) => {
+      button.addEventListener('click', () => renderPrincipleSelection(index));
+    });
+
+    const dimensionTabs = [...document.querySelectorAll('.dimension-btn')];
+    function selectDimension(index, focus = false) {
+      dimensionTabs.forEach((button, position) => {
+        const active = position === index;
+        button.setAttribute('aria-selected', String(active));
+        button.tabIndex = active ? 0 : -1;
+        document.getElementById(button.getAttribute('aria-controls')).classList.toggle('hidden', !active);
+      });
+      if (focus) dimensionTabs[index].focus();
+    }
+    dimensionTabs.forEach((button, index) => {
+      button.addEventListener('click', () => selectDimension(index));
+      button.addEventListener('keydown', event => {
+        let next;
+        if (event.key === 'ArrowRight') next = (index + 1) % dimensionTabs.length;
+        else if (event.key === 'ArrowLeft') next = (index - 1 + dimensionTabs.length) % dimensionTabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = dimensionTabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectDimension(next, true);
+      });
+    });
+
+    selectChapter(0);
+    renderPrincipleSelection(0);
+  </script>
+</body>
+</html>
