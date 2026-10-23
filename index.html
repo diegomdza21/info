@@ -15,7 +15,12 @@
     .chapter-btn[aria-selected="false"] { background-color:transparent !important; color:#fff !important; border-color:rgba(255,255,255,.2) !important; }
     .principle-btn[aria-pressed="true"] { background-color:#1c6550 !important; color:#fff !important; border-color:#1c6550 !important; transform:translateY(-3px); }
     .principle-btn[aria-pressed="false"] { background-color:#fff !important; color:#17332d !important; border-color:#cbd5c5 !important; transform:none; }
-    .dimension-btn[aria-selected="true"] { background:#1c6550; color:white; }
+    .dimension-btn[aria-selected="true"] { background-color:#1c6550; color:#fff; border-color:#1c6550; transform:translateY(-3px); }
+    .dimension-btn[aria-selected="false"] { background-color:#fff; color:#17332d; }
+    .pillar-btn[aria-selected="true"] { background-color:#1c6550; color:#fff; border-color:#1c6550; transform:translateY(-3px); }
+    .pillar-btn[aria-selected="false"] { background-color:#fff; color:#17332d; }
+    .example-btn[aria-selected="true"] { background-color:#1c6550; color:#fff; border-color:#1c6550; transform:translateY(-3px); }
+    .example-btn[aria-selected="false"] { background-color:#fff; color:#17332d; }
     .swap-in { animation:appear .38s ease both; }
     @keyframes appear { from {opacity:0;transform:translateY(10px)} to {opacity:1;transform:translateY(0)} }
     :focus-visible { outline:3px solid #b97927; outline-offset:4px; }
@@ -46,110 +51,415 @@
 
     <!-- CAPÍTULO 1 -->
     <section id="chapter-1" role="tabpanel" aria-labelledby="chapter-tab-1" class="max-w-6xl mx-auto px-5 md:px-10 py-12 md:py-16 swap-in">
-      <div>
-        <h2 class="display leading-tight mb-4" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Principios e Indicadores de Sustentabilidad</h2>
-        <p class="leading-relaxed max-w-2xl" style="color: rgb(82, 99, 90); font-size: 23px;">La sustentabilidad considera el impacto de un proyecto a lo largo del tiempo. Explora sus principios, compara sus dimensiones y descubre qué indicadores permiten observar sus resultados.</p>
+      <div class="rounded-3xl p-8 md:p-12 relative overflow-hidden" style="background: rgb(23, 63, 52);">
+        <div class="absolute right-[-80px] top-[-120px] w-[300px] h-[300px] rounded-full border border-white/10 pointer-events-none"></div>
+        <h2 class="relative display leading-tight mb-5" style="color: #fff; font-weight: 600; font-size: 34px;">Principios e Indicadores de Sustentabilidad</h2>
+        <p class="relative leading-relaxed max-w-3xl mb-6" style="color: rgb(225, 235, 220); font-size: 23px;">La sustentabilidad considera el impacto de un proyecto a lo largo del tiempo. Explora sus principios, compara sus dimensiones y descubre qué indicadores permiten observar sus resultados.</p>
+        <div class="relative flex flex-wrap gap-3">
+          <span class="rounded-full px-4 py-2 font-bold" style="background: rgb(220, 235, 160); color: rgb(23, 51, 45); font-size: 17px;">🧭 3 principios</span>
+          <span class="rounded-full px-4 py-2 font-bold" style="background: rgb(220, 235, 160); color: rgb(23, 51, 45); font-size: 17px;">⚖️ 3 dimensiones</span>
+          <span class="rounded-full px-4 py-2 font-bold" style="background: rgb(220, 235, 160); color: rgb(23, 51, 45); font-size: 17px;">📊 Indicadores medibles</span>
+        </div>
       </div>
 
       <div class="mt-14">
         <h3 class="display mb-3" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 30px;">Tres Principios para la Sustentabilidad</h3>
         <p class="mb-6" style="color: rgb(82, 99, 90); font-size: 19px;">(Selecciona una idea para leer qué significa en la práctica)</p>
         <div class="grid md:grid-cols-3 gap-3" aria-label="Selecciona un principio">
-          <button type="button" data-principle="0" aria-pressed="true" class="principle-btn min-h-28 p-5 rounded-2xl border border-[#cbd5c5] text-left font-bold transition" style="font-weight: 700; font-size: 24px;">Perspectiva del ciclo de vida y regeneración</button>
-          <button type="button" data-principle="1" aria-pressed="false" class="principle-btn min-h-28 p-5 rounded-2xl border border-[#cbd5c5] bg-white text-left font-bold transition" style="font-weight: 700; font-size: 24px;">Uso eficiente de recursos e innovación</button>
-          <button type="button" data-principle="2" aria-pressed="false" class="principle-btn min-h-28 p-5 rounded-2xl border border-[#cbd5c5] bg-white text-left font-bold transition" style="font-weight: 700; font-size: 24px;">Ética y responsabilidad intergeneracional</button>
+          <button type="button" data-principle="0" aria-pressed="true" class="principle-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">♻️</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Principio 1</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Ciclo de vida y regeneración</span>
+          </button>
+          <button type="button" data-principle="1" aria-pressed="false" class="principle-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">💡</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Principio 2</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Recursos e innovación</span>
+          </button>
+          <button type="button" data-principle="2" aria-pressed="false" class="principle-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">⏳</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Principio 3</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Ética intergeneracional</span>
+          </button>
         </div>
-        <div class="mt-4 rounded-3xl p-7 md:p-9" style="background: rgb(233, 240, 215);">
-          <div class="principle-detail swap-in" data-detail="0">
-            <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 27px;">Evaluar los impactos ambientales y socioeconómicos desde la extracción de materia prima hasta la disposición final, asegurando que las funciones de la naturaleza permanezcan intactas.</p>
+        <div class="mt-4 rounded-3xl p-6 md:p-9 texture" style="background: rgb(233, 240, 215);">
+          <div class="principle-detail swap-in grid lg:grid-cols-[4fr_7fr] gap-8 items-center" data-detail="0">
+            <img src="images/01pr1.jpg" alt="Residuos de plástico, papel y latas sobre musgo" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
+            <div>
+              <h4 class="display leading-tight mb-4" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Perspectiva del ciclo de vida y regeneración</h4>
+              <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 24px;">Evaluar los impactos ambientales y socioeconómicos desde la extracción de materia prima hasta la disposición final, asegurando que las funciones de la naturaleza permanezcan intactas.</p>
+            </div>
           </div>
-          <div class="principle-detail hidden swap-in" data-detail="1">
-            <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 27px;">Emplear energías limpias o renovables y optimizar las materias primas para minimizar los residuos y las emisiones tóxicas.</p>
+          <div class="principle-detail hidden swap-in grid lg:grid-cols-[4fr_7fr] gap-8 items-center" data-detail="1">
+            <img src="images/01pr2.jpg" alt="Casa con paneles solares en el techo y aerogeneradores" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
+            <div>
+              <h4 class="display leading-tight mb-4" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Uso eficiente de recursos e innovación</h4>
+              <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 24px;">Emplear energías limpias o renovables y optimizar las materias primas para minimizar los residuos y las emisiones tóxicas.</p>
+            </div>
           </div>
-          <div class="principle-detail hidden swap-in" data-detail="2">
-            <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 27px;">Tomar decisiones de diseño que satisfagan las necesidades del presente sin poner en riesgo las necesidades de las generaciones futuras.</p>
+          <div class="principle-detail hidden swap-in grid lg:grid-cols-[4fr_7fr] gap-8 items-center" data-detail="2">
+            <img src="images/01pr3.jpg" alt="Maestro y niños aprendiendo con una tableta" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
+            <div>
+              <h4 class="display leading-tight mb-4" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Ética y responsabilidad intergeneracional</h4>
+              <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 24px;">Tomar decisiones de diseño que satisfagan las necesidades del presente sin poner en riesgo las necesidades de las generaciones futuras.</p>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="mt-16">
         <h3 class="display mb-3" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 30px;">Dimensiones e Indicadores de Sustentabilidad</h3>
-        <p class="max-w-3xl leading-relaxed mb-7" style="color: rgb(82, 99, 90); font-size: 20px;">El desarrollo sostenible se fundamenta en el modelo del Triple Resultado (Triple Bottom Line), ampliado en contextos globales hacia la agenda de los ODS de la ONU</p>
-        <div role="tablist" aria-label="Dimensiones e indicadores" class="flex flex-wrap gap-2 mb-4">
-          <button id="dimension-tab-1" type="button" role="tab" aria-selected="true" aria-controls="dimension-1" tabindex="0" class="dimension-btn px-6 py-3 rounded-full bg-[#e8ecdc] font-bold transition" style="font-weight: 700; font-size: 20px;">Ambiental</button>
-          <button id="dimension-tab-2" type="button" role="tab" aria-selected="false" aria-controls="dimension-2" tabindex="-1" class="dimension-btn px-6 py-3 rounded-full bg-[#e8ecdc] font-bold transition" style="font-weight: 700; font-size: 20px;">Económica</button>
-          <button id="dimension-tab-3" type="button" role="tab" aria-selected="false" aria-controls="dimension-3" tabindex="-1" class="dimension-btn px-6 py-3 rounded-full bg-[#e8ecdc] font-bold transition" style="font-weight: 700; font-size: 20px;">Social</button>
+        <div class="rounded-2xl p-5 mb-6 flex gap-4 items-start" style="background: rgb(220, 235, 160);">
+          <span aria-hidden="true" class="text-4xl leading-none">🔺</span>
+          <p class="leading-relaxed" style="color: rgb(23, 51, 45); font-size: 20px;">El desarrollo sostenible se fundamenta en el modelo del <strong>Triple Resultado (Triple Bottom Line)</strong>, ampliado en contextos globales hacia la agenda de los <strong>ODS de la ONU</strong>.</p>
         </div>
-        <div class="rounded-3xl p-6 md:p-9 texture" style="background: rgb(233, 240, 215);">
-          <div id="dimension-1" role="tabpanel" aria-labelledby="dimension-tab-1" tabindex="0" class="dimension-panel swap-in grid lg:grid-cols-[1fr_1fr] gap-8">
+        <div role="tablist" aria-label="Dimensiones e indicadores" class="grid md:grid-cols-3 gap-3">
+          <button id="dimension-tab-1" type="button" role="tab" aria-selected="true" aria-controls="dimension-1" tabindex="0" class="dimension-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">🌿</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Dimensión 1</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Ambiental</span>
+          </button>
+          <button id="dimension-tab-2" type="button" role="tab" aria-selected="false" aria-controls="dimension-2" tabindex="-1" class="dimension-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">💰</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Dimensión 2</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Económica</span>
+          </button>
+          <button id="dimension-tab-3" type="button" role="tab" aria-selected="false" aria-controls="dimension-3" tabindex="-1" class="dimension-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">🤝</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Dimensión 3</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Social</span>
+          </button>
+        </div>
+        <div class="mt-4 rounded-3xl p-6 md:p-9 texture" style="background: rgb(233, 240, 215);">
+          <div id="dimension-1" role="tabpanel" aria-labelledby="dimension-tab-1" tabindex="0" class="dimension-panel swap-in grid lg:grid-cols-[4fr_7fr] gap-8 items-center">
+            <img src="images/01dm1.jpg" alt="Tucán sobre una rama" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
             <div>
-              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 17px;">Dimensión ambiental</p>
-              <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 20px;">Conservar la biodiversidad, mantener la integridad de los ecosistemas y utilizar de forma razonable los recursos renovables y no renovables. Busca mantener la tasa de regeneración natural por encima de la tasa de consumo.</p>
-            </div>
-            <div class="lg:border-l border-[#cbd5c5] lg:pl-8">
-              <h4 class="font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 20px;">Indicadores para observar</h4>
-              <ul class="list-disc pl-5 space-y-2" style="color: rgb(52, 75, 62); font-size: 20px;">
-                <li>Huella de carbono (kg de CO₂ emitidos)</li>
-                <li>Huella hídrica</li>
-                <li>Tasa de generación y reciclaje de residuos</li>
-                <li>Consumo energético por unidad producida</li>
+              <h4 class="display leading-tight mb-3" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Dimensión ambiental</h4>
+              <p class="leading-relaxed mb-6" style="color: rgb(52, 75, 62); font-size: 20px;">Conservar la biodiversidad, mantener la integridad de los ecosistemas y utilizar de forma razonable los recursos renovables y no renovables. Busca mantener la tasa de regeneración natural por encima de la tasa de consumo.</p>
+              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(28, 101, 80); font-size: 14px;">Indicadores para observar</p>
+              <ul class="space-y-3">
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">👣</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Huella de carbono (kg de CO₂ emitidos)</span>
+                </li>
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">💧</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Huella hídrica</span>
+                </li>
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">♻️</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Tasa de generación y reciclaje de residuos</span>
+                </li>
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">⚡</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Consumo energético por unidad producida</span>
+                </li>
               </ul>
             </div>
           </div>
-          <div id="dimension-2" role="tabpanel" aria-labelledby="dimension-tab-2" tabindex="0" class="dimension-panel hidden swap-in grid lg:grid-cols-[1fr_1fr] gap-8">
+          <div id="dimension-2" role="tabpanel" aria-labelledby="dimension-tab-2" tabindex="0" class="dimension-panel hidden swap-in grid lg:grid-cols-[4fr_7fr] gap-8 items-center">
+            <img src="images/01dm2.jpg" alt="Monedas apiladas con hojas verdes que crecen sobre ellas" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
             <div>
-              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 17px;">Dimensión económica</p>
-              <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 20px;">Garantizar la viabilidad financiera y rentabilidad del proyecto o sistema técnico, incentivando la innovación, el uso eficiente de insumos y la creación de valor a largo plazo sin transferir costos ecológicos a la sociedad.</p>
-            </div>
-            <div class="lg:border-l border-[#cbd5c5] lg:pl-8">
-              <h4 class="font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 20px;">Indicadores para observar</h4>
-              <ul class="list-disc pl-5 space-y-2" style="color: rgb(52, 75, 62); font-size: 20px;">
-                <li>Retorno de inversión considerando costos ambientales</li>
-                <li>Costo por tonelada de CO₂ evitado</li>
-                <li>Análisis de costo del ciclo de vida (LCC)</li>
+              <h4 class="display leading-tight mb-3" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Dimensión económica</h4>
+              <p class="leading-relaxed mb-6" style="color: rgb(52, 75, 62); font-size: 20px;">Garantizar la viabilidad financiera y rentabilidad del proyecto o sistema técnico, incentivando la innovación, el uso eficiente de insumos y la creación de valor a largo plazo sin transferir costos ecológicos a la sociedad.</p>
+              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(28, 101, 80); font-size: 14px;">Indicadores para observar</p>
+              <ul class="space-y-3">
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">📈</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Retorno de inversión considerando costos ambientales</span>
+                </li>
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">🏷️</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Costo por tonelada de CO₂ evitado</span>
+                </li>
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">🧮</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Análisis de costo del ciclo de vida (LCC)</span>
+                </li>
               </ul>
             </div>
           </div>
-          <div id="dimension-3" role="tabpanel" aria-labelledby="dimension-tab-3" tabindex="0" class="dimension-panel hidden swap-in grid lg:grid-cols-[1fr_1fr] gap-8">
+          <div id="dimension-3" role="tabpanel" aria-labelledby="dimension-tab-3" tabindex="0" class="dimension-panel hidden swap-in grid lg:grid-cols-[4fr_7fr] gap-8 items-center">
+            <img src="images/01dm3.jpg" alt="Manos de colores rodeando un planeta" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
             <div>
-              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 17px;">Dimensión social</p>
-              <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 20px;">Promover la equidad social, el bienestar, la inclusión y la mejora de la calidad de vida en las comunidades afectadas. Garantizar el respeto a los derechos humanos y la justicia intergeneracional.</p>
-            </div>
-            <div class="lg:border-l border-[#cbd5c5] lg:pl-8">
-              <h4 class="font-bold mb-3" style="color: rgb(23, 51, 45); font-size: 20px;">Indicadores para observar</h4>
-              <ul class="list-disc pl-5 space-y-2" style="color: rgb(52, 75, 62); font-size: 20px;">
-                <li>Tasa de seguridad y salud ocupacional</li>
-                <li>Nivel de aceptación</li>
-                <li>Impacto comunitario</li>
-                <li>Generación de empleo local</li>
+              <h4 class="display leading-tight mb-3" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Dimensión social</h4>
+              <p class="leading-relaxed mb-6" style="color: rgb(52, 75, 62); font-size: 20px;">Promover la equidad social, el bienestar, la inclusión y la mejora de la calidad de vida en las comunidades afectadas. Garantizar el respeto a los derechos humanos y la justicia intergeneracional.</p>
+              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(28, 101, 80); font-size: 14px;">Indicadores para observar</p>
+              <ul class="space-y-3">
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">🦺</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Tasa de seguridad y salud ocupacional</span>
+                </li>
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">👍</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Nivel de aceptación</span>
+                </li>
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">🏘️</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Impacto comunitario</span>
+                </li>
+                <li class="flex gap-3 items-center rounded-2xl bg-white/70 p-4">
+                  <span aria-hidden="true" class="text-3xl leading-none">👷</span>
+                  <span class="leading-snug" style="color: rgb(52, 75, 62); font-size: 19px;">Generación de empleo local</span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="mt-14 rounded-3xl border-2 border-dashed border-[#a8bea4] min-h-44 flex flex-col items-center justify-center text-center p-7" style="background: rgb(232, 236, 220);">
-        <span aria-hidden="true" class="text-4xl mb-2">◌</span>
-        <p class="font-bold" style="color: rgb(23, 51, 45); font-size: 16px;">ESPACIO PARA TU IMAGEN 02</p>
-        <p class="mt-2" style="color: rgb(82, 99, 90); font-size: 14px;">Aquí puedes colocar un diagrama propio de las tres dimensiones o una imagen de tu proyecto.</p>
+    
+      <div class="mt-16 rounded-3xl border border-[#d8dfcc] p-6 md:p-9" style="background: rgb(232, 236, 220);">
+        <h3 class="display mb-5" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 26px;">📚 Referencias</h3>
+        <ul class="space-y-4">
+          <li class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 18px; padding-left: 2rem; text-indent: -2rem;">Artaraz, M. (2001). Teoría de las tres dimensiones del concepto de desarrollo sostenible. <em>Ecosistemas, 10</em>(3), 1–6. <a href="https://revistaecosistemas.net/index.php/ecosistemas/article/view/614/580" target="_blank" rel="noopener noreferrer" class="underline break-all" style="color: rgb(28, 101, 80);">https://revistaecosistemas.net/index.php/ecosistemas/article/view/614/580</a></li>
+          <li class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 18px; padding-left: 2rem; text-indent: -2rem;">Ramallo, M., Cardaci, K. F., &amp; Costucica, L. A. D. (2017). El desarrollo sostenible (DS) en la formación de ingenieros: un nuevo campo para repensar la perspectiva CTS. <em>Revista Tecnologia e Sociedade, 13</em>(28), 114–129. <a href="https://doi.org/10.3895/rts.v13n28.3996" target="_blank" rel="noopener noreferrer" class="underline break-all" style="color: rgb(28, 101, 80);">https://doi.org/10.3895/rts.v13n28.3996</a></li>
+          <li class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 18px; padding-left: 2rem; text-indent: -2rem;">Silvius, A. J. G., &amp; Schipper, R. P. J. (2014). Sustainability in project management: A literature review. <em>Business Strategy and the Environment, 23</em>(1), 63–78. <a href="https://dialnet.unirioja.es/descarga/articulo/8747272.pdf" target="_blank" rel="noopener noreferrer" class="underline break-all" style="color: rgb(28, 101, 80);">https://dialnet.unirioja.es/descarga/articulo/8747272.pdf</a></li>
+          <li class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 18px; padding-left: 2rem; text-indent: -2rem;">UNESCO. (2021). <em>Ingeniería para el desarrollo sostenible: Ricos datos, inteligencia artificial y ciudades inteligentes</em>. Organización de las Naciones Unidas para la Educación, la Ciencia y la Cultura. <a href="https://unesdoc.unesco.org/ark:/48223/pf0000375634_spa.locale=en" target="_blank" rel="noopener noreferrer" class="underline break-all" style="color: rgb(28, 101, 80);">https://unesdoc.unesco.org/ark:/48223/pf0000375634_spa.locale=en</a></li>
+        </ul>
       </div>
     </section>
 
     <!-- CAPÍTULO 2 -->
-    <section id="chapter-2" role="tabpanel" aria-labelledby="chapter-tab-2" class="hidden max-w-6xl mx-auto px-5 md:px-10 py-16 md:py-24 swap-in">
-      <p class="uppercase tracking-widest font-bold mb-4" style="color: rgb(28, 101, 80); font-size: 13px;">Capítulo 02</p>
-      <h2 class="display mb-6" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 24px;">Ingeniería sustentable</h2>
-      <div class="rounded-3xl p-8 md:p-12 border border-[#d8dfcc]" style="background: rgb(232, 236, 220);">
-        <p class="leading-relaxed" style="color: rgb(82, 99, 90); font-size: 16px;">Esta sección está reservada para agregar tu contenido más adelante.</p>
+    <section id="chapter-2" role="tabpanel" aria-labelledby="chapter-tab-2" class="hidden max-w-6xl mx-auto px-5 md:px-10 py-12 md:py-16 swap-in">
+      <div>
+        <h2 class="display leading-tight mb-4" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Ingeniería y Sustentabilidad: Construyendo el Futuro</h2>
+        <p class="leading-relaxed max-w-2xl" style="color: rgb(82, 99, 90); font-size: 23px;">Cómo la tecnología y el diseño técnico protegen el planeta y mejoran la sociedad.</p>
+      </div>
+
+      <div class="mt-12 grid lg:grid-cols-[6fr_5fr] gap-6 items-stretch">
+        <div class="rounded-3xl p-7 md:p-9 flex items-center" style="background: rgb(233, 240, 215);">
+          <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 25px;">La ingeniería no solo crea tecnología; transforma nuestra relación con el entorno. A través de la innovación y la optimización de recursos, los ingenieros aplican <strong>principios e indicadores de sustentabilidad</strong> para satisfacer las necesidades presentes sin comprometer las de las futuras generaciones.</p>
+        </div>
+        <img src="images/02intro.jpg" alt="Ingeniero con casco frente a paneles solares y aerogeneradores" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
+      </div>
+
+      <div class="mt-16">
+        <h3 class="display mb-3" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 30px;">3 Ejemplos de la Ingeniería en la Sustentabilidad</h3>
+        <p class="mb-6" style="color: rgb(82, 99, 90); font-size: 19px;">(Selecciona un ejemplo para ver en qué consiste y cómo se conecta con la sustentabilidad)</p>
+        <div role="tablist" aria-label="Ejemplos de ingeniería sustentable" class="grid md:grid-cols-3 gap-3">
+          <button id="example-tab-1" type="button" role="tab" aria-selected="true" aria-controls="example-1" tabindex="0" class="example-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">⚡</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Ejemplo 1</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Energías renovables</span>
+          </button>
+          <button id="example-tab-2" type="button" role="tab" aria-selected="false" aria-controls="example-2" tabindex="-1" class="example-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">🚗</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Ejemplo 2</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Movilidad eléctrica</span>
+          </button>
+          <button id="example-tab-3" type="button" role="tab" aria-selected="false" aria-controls="example-3" tabindex="-1" class="example-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">🏭</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Ejemplo 3</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Economía circular</span>
+          </button>
+        </div>
+        <div class="mt-4 rounded-3xl p-6 md:p-9 texture" style="background: rgb(233, 240, 215);">
+          <div id="example-1" role="tabpanel" aria-labelledby="example-tab-1" tabindex="0" class="example-panel swap-in grid lg:grid-cols-[5fr_6fr] gap-8 items-center">
+            <img src="images/02ej1.jpg" alt="Manos sosteniendo un pequeño planeta verde con aerogeneradores, ciudad y panel solar" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
+            <div>
+              <h4 class="display leading-tight mb-4" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Transición hacia Energías Renovables</h4>
+              <p class="uppercase tracking-widest font-bold mb-2" style="color: rgb(28, 101, 80); font-size: 14px;">¿En qué consiste?</p>
+              <p class="leading-relaxed mb-6" style="color: rgb(52, 75, 62); font-size: 21px;">Diseño e implementación de parques eólicos, plantas solares y redes eléctricas inteligentes (smart grids).</p>
+              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(28, 101, 80); font-size: 14px;">Conexión con la sustentabilidad</p>
+              <ul class="space-y-3">
+                <li class="flex gap-3 items-start rounded-2xl bg-white/70 p-4">
+                  <span class="shrink-0 rounded-full px-3 py-1 font-bold uppercase tracking-wider" style="background: rgb(28, 101, 80); color: #fff; font-size: 13px;">Ambiental</span>
+                  <span class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">Reduce drásticamente la huella de carbono al sustituir combustibles fósiles.</span>
+                </li>
+                <li class="flex gap-3 items-start rounded-2xl bg-white/70 p-4">
+                  <span class="shrink-0 rounded-full px-3 py-1 font-bold uppercase tracking-wider" style="background: rgb(28, 101, 80); color: #fff; font-size: 13px;">Económica</span>
+                  <span class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">Disminuye el costo por tonelada de CO₂ evitado y genera modelos energéticos rentables a largo plazo.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="example-2" role="tabpanel" aria-labelledby="example-tab-2" tabindex="0" class="example-panel hidden swap-in grid lg:grid-cols-[5fr_6fr] gap-8 items-center">
+            <img src="images/02ej2.jpg" alt="Automóvil eléctrico conectado a una estación de carga" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
+            <div>
+              <h4 class="display leading-tight mb-4" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Movilidad Eléctrica e Ingeniería Automotriz</h4>
+              <p class="uppercase tracking-widest font-bold mb-2" style="color: rgb(28, 101, 80); font-size: 14px;">¿En qué consiste?</p>
+              <p class="leading-relaxed mb-6" style="color: rgb(52, 75, 62); font-size: 21px;">Desarrollo de vehículos eléctricos, baterías de alta eficiencia y sistemas de frenado regenerativo.</p>
+              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(28, 101, 80); font-size: 14px;">Conexión con la sustentabilidad</p>
+              <ul class="space-y-3">
+                <li class="flex gap-3 items-start rounded-2xl bg-white/70 p-4">
+                  <span class="shrink-0 rounded-full px-3 py-1 font-bold uppercase tracking-wider" style="background: rgb(28, 101, 80); color: #fff; font-size: 13px;">Ciclo de vida</span>
+                  <span class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">Optimización del uso de materias primas y diseño de baterías para ser recicladas o reutilizadas.</span>
+                </li>
+                <li class="flex gap-3 items-start rounded-2xl bg-white/70 p-4">
+                  <span class="shrink-0 rounded-full px-3 py-1 font-bold uppercase tracking-wider" style="background: rgb(28, 101, 80); color: #fff; font-size: 13px;">Social</span>
+                  <span class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">Disminución de la contaminación atmosférica y acústica en centros urbanos, mejorando la salud pública.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="example-3" role="tabpanel" aria-labelledby="example-tab-3" tabindex="0" class="example-panel hidden swap-in grid lg:grid-cols-[5fr_6fr] gap-8 items-center">
+            <img src="images/02ej3.jpg" alt="Símbolo de reciclaje de papel sobre pasto" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
+            <div>
+              <h4 class="display leading-tight mb-4" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Economía Circular y Optimización de Procesos Industriales</h4>
+              <p class="uppercase tracking-widest font-bold mb-2" style="color: rgb(28, 101, 80); font-size: 14px;">¿En qué consiste?</p>
+              <p class="leading-relaxed mb-6" style="color: rgb(52, 75, 62); font-size: 21px;">Implementación de simbiosis industrial, donde los residuos de un proceso se convierten en materia prima para otro, junto con el tratamiento y reúso de agua.</p>
+              <p class="uppercase tracking-widest font-bold mb-3" style="color: rgb(28, 101, 80); font-size: 14px;">Conexión con la sustentabilidad</p>
+              <ul class="space-y-3">
+                <li class="flex gap-3 items-start rounded-2xl bg-white/70 p-4">
+                  <span class="shrink-0 rounded-full px-3 py-1 font-bold uppercase tracking-wider" style="background: rgb(28, 101, 80); color: #fff; font-size: 13px;">Ambiental</span>
+                  <span class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">Incrementa la tasa de reciclaje de residuos y reduce la huella hídrica.</span>
+                </li>
+                <li class="flex gap-3 items-start rounded-2xl bg-white/70 p-4">
+                  <span class="shrink-0 rounded-full px-3 py-1 font-bold uppercase tracking-wider" style="background: rgb(28, 101, 80); color: #fff; font-size: 13px;">Económica</span>
+                  <span class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">Minimiza gastos en insumos primarios y evita penalizaciones por contaminación.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 rounded-3xl p-8 md:p-12 relative overflow-hidden" style="background: rgb(23, 63, 52);">
+        <div class="absolute right-[-80px] top-[-120px] w-[300px] h-[300px] rounded-full border border-white/10 pointer-events-none"></div>
+        <p class="relative uppercase tracking-[.2em] font-bold mb-4" style="color: rgb(220, 235, 160); font-size: 16px;">Conclusión</p>
+        <p class="relative display leading-snug max-w-4xl" style="color: #fff; font-weight: 500; font-size: 30px;">La ingeniería es el puente fundamental para materializar el desarrollo sostenible. Al integrar métricas ambientales, económicas y sociales en cada diseño, los ingenieros transforman los retos globales en soluciones técnicas viables y sostenibles en el tiempo.</p>
+      </div>
+    
+      <div class="mt-16 rounded-3xl border border-[#d8dfcc] p-6 md:p-9" style="background: rgb(232, 236, 220);">
+        <h3 class="display mb-5" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 26px;">📚 Referencias</h3>
+        <ul class="space-y-4">
+          <li class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 18px; padding-left: 2rem; text-indent: -2rem;">Ellen MacArthur Foundation. (2013). <em>Towards the circular economy Vol. 1: An economic and business rationale for an accelerated transition</em>. <a href="https://www.ellenmacarthurfoundation.org/assets/downloads/publications/Ellen-MacArthur-Foundation-Towards-the-Circular-Economy-vol.1.pdf" target="_blank" rel="noopener noreferrer" class="underline break-all" style="color: rgb(28, 101, 80);">https://www.ellenmacarthurfoundation.org/assets/downloads/publications/Ellen-MacArthur-Foundation-Towards-the-Circular-Economy-vol.1.pdf</a></li>
+          <li class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 18px; padding-left: 2rem; text-indent: -2rem;">World Commission on Environment and Development. (1987). <em>Our common future</em>. Oxford University Press. <a href="https://sustainabledevelopment.un.org/content/documents/5987our-common-future.pdf" target="_blank" rel="noopener noreferrer" class="underline break-all" style="color: rgb(28, 101, 80);">https://sustainabledevelopment.un.org/content/documents/5987our-common-future.pdf</a></li>
+        </ul>
       </div>
     </section>
 
     <!-- CAPÍTULO 3 -->
-    <section id="chapter-3" role="tabpanel" aria-labelledby="chapter-tab-3" class="hidden max-w-6xl mx-auto px-5 md:px-10 py-16 md:py-24 swap-in">
-      <p class="uppercase tracking-widest font-bold mb-4" style="color: rgb(28, 101, 80); font-size: 13px;">Capítulo 03</p>
-      <h2 class="display mb-6" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 24px;">Reto sustentable</h2>
-      <div class="rounded-3xl p-8 md:p-12 border border-[#d8dfcc]" style="background: rgb(232, 236, 220);">
-        <p class="leading-relaxed" style="color: rgb(82, 99, 90); font-size: 16px;">Esta sección está reservada para agregar tu reto más adelante.</p>
+    <section id="chapter-3" role="tabpanel" aria-labelledby="chapter-tab-3" class="hidden max-w-6xl mx-auto px-5 md:px-10 py-12 md:py-16 swap-in">
+      <div class="rounded-3xl p-8 md:p-12 relative overflow-hidden" style="background: rgb(23, 63, 52);">
+        <div class="absolute right-[-80px] top-[-120px] w-[300px] h-[300px] rounded-full border border-white/10 pointer-events-none"></div>
+        <h2 class="relative display leading-tight mb-6" style="color: #fff; font-weight: 600; font-size: 34px;">Bastón asistencial: tecnología al servicio de la autonomía</h2>
+        <div class="relative flex flex-wrap gap-3">
+          <span class="rounded-full px-4 py-2 font-bold" style="background: rgb(220, 235, 160); color: rgb(23, 51, 45); font-size: 17px;">📍 Ciudad Juárez</span>
+          <span class="rounded-full px-4 py-2 font-bold" style="background: rgb(220, 235, 160); color: rgb(23, 51, 45); font-size: 17px;">🤝 CEIAC · Centro de Estudios para Invidentes A.C.</span>
+          <span class="rounded-full px-4 py-2 font-bold" style="background: rgb(220, 235, 160); color: rgb(23, 51, 45); font-size: 17px;">🦯 Accesibilidad visual</span>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="relative rounded-2xl bg-white border border-[#d8dfcc] p-4 text-center">
+          <span aria-hidden="true" class="block text-4xl mb-1">🚧</span>
+          <span class="block font-bold" style="color: rgb(23, 51, 45); font-size: 16px;">Obstáculo</span>
+          <span aria-hidden="true" class="hidden md:block absolute right-[-14px] top-1/2 -translate-y-1/2 z-10 font-bold" style="color: rgb(28, 101, 80); font-size: 22px;">→</span>
+        </div>
+        <div class="relative rounded-2xl bg-white border border-[#d8dfcc] p-4 text-center">
+          <span aria-hidden="true" class="block text-4xl mb-1">📡</span>
+          <span class="block font-bold" style="color: rgb(23, 51, 45); font-size: 16px;">Sensor ultrasónico</span>
+          <span aria-hidden="true" class="hidden md:block absolute right-[-14px] top-1/2 -translate-y-1/2 z-10 font-bold" style="color: rgb(28, 101, 80); font-size: 22px;">→</span>
+        </div>
+        <div class="relative rounded-2xl bg-white border border-[#d8dfcc] p-4 text-center">
+          <span aria-hidden="true" class="block text-4xl mb-1">🧠</span>
+          <span class="block font-bold" style="color: rgb(23, 51, 45); font-size: 16px;">Arduino</span>
+          <span aria-hidden="true" class="hidden md:block absolute right-[-14px] top-1/2 -translate-y-1/2 z-10 font-bold" style="color: rgb(28, 101, 80); font-size: 22px;">→</span>
+        </div>
+        <div class="relative rounded-2xl bg-white border border-[#d8dfcc] p-4 text-center">
+          <span aria-hidden="true" class="block text-4xl mb-1">🔊</span>
+          <span class="block font-bold" style="color: rgb(23, 51, 45); font-size: 16px;">Buzzer · cambia la frecuencia</span>
+          <span aria-hidden="true" class="hidden md:block absolute right-[-14px] top-1/2 -translate-y-1/2 z-10 font-bold" style="color: rgb(28, 101, 80); font-size: 22px;"></span>
+        </div></div>
+
+      <div class="mt-12">
+        <p class="mb-6" style="color: rgb(82, 99, 90); font-size: 19px;">(Selecciona un eje para ver cómo el reto se conecta con la sustentabilidad)</p>
+        <div role="tablist" aria-label="Ejes del reto sustentable" class="grid md:grid-cols-3 gap-3">
+          <button id="pillar-tab-1" type="button" role="tab" aria-selected="true" aria-controls="pillar-1" tabindex="0" class="pillar-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">🤝</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Eje 1</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Compromiso social</span>
+          </button>
+          <button id="pillar-tab-2" type="button" role="tab" aria-selected="false" aria-controls="pillar-2" tabindex="-1" class="pillar-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">🏛️</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Eje 2</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Democracia y bien común</span>
+          </button>
+          <button id="pillar-tab-3" type="button" role="tab" aria-selected="false" aria-controls="pillar-3" tabindex="-1" class="pillar-btn text-left rounded-2xl border border-[#cbd5c5] p-5 transition">
+            <span aria-hidden="true" class="block text-5xl mb-3">🌱</span>
+            <span class="block uppercase tracking-widest font-bold" style="font-size: 14px; opacity:.75;">Eje 3</span>
+            <span class="block font-bold mt-1" style="font-size: 22px;">Estrategias sostenibles</span>
+          </button>
+        </div>
+        <div class="mt-4 rounded-3xl p-6 md:p-9 texture" style="background: rgb(233, 240, 215);">
+          <div id="pillar-1" role="tabpanel" aria-labelledby="pillar-tab-1" tabindex="0" class="pillar-panel swap-in grid lg:grid-cols-[4fr_7fr] gap-8 items-center">
+            <img src="images/03ej1.jpg" alt="Prebastón sensorial con agarres, estructura de PVC y apoyos inferiores" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
+            <div>
+              <h4 class="display leading-tight mb-1" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Compromiso Social y Solidaridad</h4>
+              <p class="uppercase tracking-widest font-bold mb-5" style="color: rgb(28, 101, 80); font-size: 14px;">Atención a necesidades reales</p>
+              <ul class="space-y-3">
+                <li class="rounded-2xl bg-white/70 p-5 flex gap-4 items-start">
+                  <span aria-hidden="true" class="text-4xl leading-none">📍</span>
+                  <div>
+                    <div class="flex flex-wrap items-center gap-2 mb-1"><h5 class="font-bold" style="color: rgb(23, 51, 45); font-size: 21px;">Impacto directo en la comunidad</h5></div>
+                    <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">El desarrollo del bastón asistencial responde a una necesidad crítica de accesibilidad para personas con discapacidad visual en Ciudad Juárez, colaborando directamente con el CEIAC (Centro de Estudios para Invidentes A.C.).</p>
+                  </div>
+                </li>
+                <li class="rounded-2xl bg-white/70 p-5 flex gap-4 items-start">
+                  <span aria-hidden="true" class="text-4xl leading-none">💚</span>
+                  <div>
+                    <div class="flex flex-wrap items-center gap-2 mb-1"><h5 class="font-bold" style="color: rgb(23, 51, 45); font-size: 21px;">Empatía en el diseño</h5></div>
+                    <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">La tecnología no se creó de forma aislada, sino orientada a resolver un problema social tangible, priorizando la seguridad y autonomía de los usuarios.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="pillar-2" role="tabpanel" aria-labelledby="pillar-tab-2" tabindex="0" class="pillar-panel hidden swap-in grid lg:grid-cols-[4fr_7fr] gap-8 items-center">
+            <img src="images/03ej2.jpg" alt="Persona con discapacidad visual cruzando la calle con un perro guía" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
+            <div>
+              <h4 class="display leading-tight mb-1" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Fortalecimiento de la Democracia y el Bien Común</h4>
+              <p class="uppercase tracking-widest font-bold mb-5" style="color: rgb(28, 101, 80); font-size: 14px;">Derecho a la ciudad para todas las personas</p>
+              <ul class="space-y-3">
+                <li class="rounded-2xl bg-white/70 p-5 flex gap-4 items-start">
+                  <span aria-hidden="true" class="text-4xl leading-none">⚖️</span>
+                  <div>
+                    <div class="flex flex-wrap items-center gap-2 mb-1"><h5 class="font-bold" style="color: rgb(23, 51, 45); font-size: 21px;">Inclusión y equidad</h5></div>
+                    <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">Garantizar la movilidad independiente promueve la equidad de condiciones en el espacio público, permitiendo que las personas con discapacidad visual ejerzan su derecho a la ciudad.</p>
+                  </div>
+                </li>
+                <li class="rounded-2xl bg-white/70 p-5 flex gap-4 items-start">
+                  <span aria-hidden="true" class="text-4xl leading-none">🧩</span>
+                  <div>
+                    <div class="flex flex-wrap items-center gap-2 mb-1"><h5 class="font-bold" style="color: rgb(23, 51, 45); font-size: 21px;">Tecnología para la ciudadanía</h5></div>
+                    <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">El bien común se alcanza cuando la ingeniería rompe barreras de exclusión y pone la innovación al servicio de sectores vulnerables.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="pillar-3" role="tabpanel" aria-labelledby="pillar-tab-3" tabindex="0" class="pillar-panel hidden swap-in grid lg:grid-cols-[4fr_7fr] gap-8 items-center">
+            <img src="images/03ej3.jpg" alt="Mapa del mundo formado por bosque sobre agua" loading="lazy" class="rounded-3xl w-full aspect-square object-cover shadow-md">
+            <div>
+              <h4 class="display leading-tight mb-1" style="color: rgb(23, 51, 45); font-weight: 600; font-size: 28px;">Estrategias Sostenibles en la Construcción de la Solución</h4>
+              <p class="uppercase tracking-widest font-bold mb-5" style="color: rgb(28, 101, 80); font-size: 14px;">Tres decisiones de diseño</p>
+              <ul class="space-y-3">
+                <li class="rounded-2xl bg-white/70 p-5 flex gap-4 items-start">
+                  <span aria-hidden="true" class="text-4xl leading-none">💲</span>
+                  <div>
+                    <div class="flex flex-wrap items-center gap-2 mb-1"><h5 class="font-bold" style="color: rgb(23, 51, 45); font-size: 21px;">Accesibilidad económica</h5><span class="rounded-full px-3 py-1 font-bold uppercase tracking-wider" style="background: rgb(28, 101, 80); color: #fff; font-size: 12px;">Social y Económica</span></div>
+                    <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">Arduino, sensores ultrasónicos, buzzers y PVC demuestran que es posible crear soluciones funcionales de bajo costo, evitando la dependencia de dispositivos médicos incosteables.</p><div class="flex flex-wrap gap-2 mt-3"><span class="rounded-full border border-[#a8bea4] px-3 py-1 font-semibold" style="color: rgb(23, 51, 45); background: rgb(233, 240, 215); font-size: 15px;">Arduino</span><span class="rounded-full border border-[#a8bea4] px-3 py-1 font-semibold" style="color: rgb(23, 51, 45); background: rgb(233, 240, 215); font-size: 15px;">Sensores ultrasónicos</span><span class="rounded-full border border-[#a8bea4] px-3 py-1 font-semibold" style="color: rgb(23, 51, 45); background: rgb(233, 240, 215); font-size: 15px;">Buzzers</span><span class="rounded-full border border-[#a8bea4] px-3 py-1 font-semibold" style="color: rgb(23, 51, 45); background: rgb(233, 240, 215); font-size: 15px;">PVC</span></div>
+                  </div>
+                </li>
+                <li class="rounded-2xl bg-white/70 p-5 flex gap-4 items-start">
+                  <span aria-hidden="true" class="text-4xl leading-none">♻️</span>
+                  <div>
+                    <div class="flex flex-wrap items-center gap-2 mb-1"><h5 class="font-bold" style="color: rgb(23, 51, 45); font-size: 21px;">Uso eficiente de recursos</h5><span class="rounded-full px-3 py-1 font-bold uppercase tracking-wider" style="background: rgb(28, 101, 80); color: #fff; font-size: 12px;">Ambiental</span></div>
+                    <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">Selección de materiales duraderos, ligeros y de fácil mantenimiento local, reduciendo el consumo innecesario y asegurando la vida útil del prototipo.</p>
+                  </div>
+                </li>
+                <li class="rounded-2xl bg-white/70 p-5 flex gap-4 items-start">
+                  <span aria-hidden="true" class="text-4xl leading-none">🔊</span>
+                  <div>
+                    <div class="flex flex-wrap items-center gap-2 mb-1"><h5 class="font-bold" style="color: rgb(23, 51, 45); font-size: 21px;">Optimización funcional</h5><span class="rounded-full px-3 py-1 font-bold uppercase tracking-wider" style="background: rgb(28, 101, 80); color: #fff; font-size: 12px;">Funcional</span></div>
+                    <p class="leading-relaxed" style="color: rgb(52, 75, 62); font-size: 19px;">La retroalimentación auditiva mediante variación de frecuencia resuelve el problema de orientación de forma intuitiva, minimizando la complejidad técnica y el consumo energético.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -206,6 +516,54 @@
         else return;
         event.preventDefault();
         selectDimension(next, true);
+      });
+    });
+
+    const exampleTabs = [...document.querySelectorAll('.example-btn')];
+    function selectExample(index, focus = false) {
+      exampleTabs.forEach((button, position) => {
+        const active = position === index;
+        button.setAttribute('aria-selected', String(active));
+        button.tabIndex = active ? 0 : -1;
+        document.getElementById(button.getAttribute('aria-controls')).classList.toggle('hidden', !active);
+      });
+      if (focus) exampleTabs[index].focus();
+    }
+    exampleTabs.forEach((button, index) => {
+      button.addEventListener('click', () => selectExample(index));
+      button.addEventListener('keydown', event => {
+        let next;
+        if (event.key === 'ArrowRight') next = (index + 1) % exampleTabs.length;
+        else if (event.key === 'ArrowLeft') next = (index - 1 + exampleTabs.length) % exampleTabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = exampleTabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectExample(next, true);
+      });
+    });
+
+    const pillarTabs = [...document.querySelectorAll('.pillar-btn')];
+    function selectPillar(index, focus = false) {
+      pillarTabs.forEach((button, position) => {
+        const active = position === index;
+        button.setAttribute('aria-selected', String(active));
+        button.tabIndex = active ? 0 : -1;
+        document.getElementById(button.getAttribute('aria-controls')).classList.toggle('hidden', !active);
+      });
+      if (focus) pillarTabs[index].focus();
+    }
+    pillarTabs.forEach((button, index) => {
+      button.addEventListener('click', () => selectPillar(index));
+      button.addEventListener('keydown', event => {
+        let next;
+        if (event.key === 'ArrowRight') next = (index + 1) % pillarTabs.length;
+        else if (event.key === 'ArrowLeft') next = (index - 1 + pillarTabs.length) % pillarTabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = pillarTabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectPillar(next, true);
       });
     });
 
